@@ -1,0 +1,15 @@
+{
+  "$schema": "https://kiro.dev/schemas/hook.v1.json",
+  "name": "mcp-schema-sync",
+  "description": "Trigger Vitest validation whenever MCP tools or server schemas are modified",
+  "trigger": "onFileSave",
+  "patterns": [
+    "backend-mcp/src/tools/**/*.ts",
+    "backend-mcp/src/server.ts",
+    "backend-mcp/src/routes/apiRoutes.ts"
+  ],
+  "action": {
+    "type": "command",
+    "command": "npm run test --workspace=backend-mcp"
+  }
+}

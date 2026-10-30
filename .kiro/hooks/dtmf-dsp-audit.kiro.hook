@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "DTMF DSP & POCSAG Telemetry Audit",
+  "description": "Audits pure Web Audio API dual-sine wave generation and POCSAG 2400 Hz pager synthesis whenever audio or telemetry components are edited.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "frontend/src/services/soundFxService.ts",
+      "frontend/src/components/GhostLine1995Bar.tsx"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Audit frontend/src/services/soundFxService.ts and frontend/src/components/GhostLine1995Bar.tsx to verify that all DTMF dual-frequency synthesis conforms to ITU-T Q.23 standards without external audio files, and test that npx tsc --noEmit passes."
+  }
+}
