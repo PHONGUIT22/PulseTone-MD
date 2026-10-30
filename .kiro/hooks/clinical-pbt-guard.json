@@ -1,0 +1,15 @@
+{
+  "$schema": "https://kiro.dev/schemas/hook.v1.json",
+  "name": "clinical-pbt-guard",
+  "description": "Trigger Property-Based Testing in backend-mcp whenever clinical services or drug interaction logic are modified",
+  "trigger": "onFileSave",
+  "patterns": [
+    "backend-mcp/src/services/drugInteractionService.ts",
+    "backend-mcp/src/tools/clinicalAdvisor.ts",
+    "backend-mcp/src/tools/orderRefill.ts"
+  ],
+  "action": {
+    "type": "command",
+    "command": "npm run test --workspace=backend-mcp"
+  }
+}

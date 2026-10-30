@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Clinical Safety & Wallet Cap PBT Guard",
+  "description": "Automatically executes fast-check Property-Based Testing (PBT) invariants for 2023 AGS Beers Criteria and the $50 Family Wallet cap whenever clinical or commerce tools are modified.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "backend-mcp/src/services/drugInteractionService.ts",
+      "backend-mcp/src/tools/orderRefill.ts",
+      "backend-mcp/src/tools/clinicalAdvisor.ts"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run the fast-check Property-Based Testing suite in backend-mcp/tests/kiroweenPbt.test.ts and verify that all AGS Beers Criteria drug interaction invariants and the $50.00 autonomous wallet limit invariant hold without regression."
+  }
+}
