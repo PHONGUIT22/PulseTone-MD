@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "pulsetone-95-ghostline-mcp": {
+      "command": "npx",
+      "args": ["tsx", "backend-mcp/src/server.ts"],
+      "env": {
+        "PORT": "3001",
+        "NODE_ENV": "development"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "getTodaySchedule",
+        "logDoseStatus",
+        "recordVitals",
+        "clinicalAdvisor"
+      ]
+    }
+  }
+}
