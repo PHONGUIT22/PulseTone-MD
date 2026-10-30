@@ -1,0 +1,73 @@
+{
+  "$schema": "https://kiro.dev/schemas/crew.v1.json",
+  "name": "pulsetone-resurrection-crew",
+  "version": "1.0.0",
+  "description": "Multi-agent Kiro Crew coordinating 1995 telecommunications DSP, geriatric clinical safety, and autonomous commerce settlement",
+  "includeMcpJson": true,
+  "resources": [
+    "file://.kiro/steering/**/*.md",
+    "file://.kiro/specs/**/*.md"
+  ],
+  "agents": [
+    {
+      "id": "telecom-dsp-architect",
+      "role": "1995 Telecom DSP Specialist",
+      "systemPrompt": "You are an expert in legacy 1990s telephony and paging protocols. You synthesize exact ITU-T Q.23 dual-frequency DTMF sine waves and 1200-baud POCSAG alphanumeric pager telemetry via the Web Audio API without third-party audio libraries, interfacing directly with MCP dose and vitals logging tools.",
+      "includeMcpJson": true,
+      "resources": [
+        "file://.kiro/steering/**/*.md",
+        "file://.kiro/specs/**/*.md"
+      ],
+      "tools": [
+        "logDoseStatus",
+        "recordVitals",
+        "getTodaySchedule"
+      ],
+      "responsibilities": [
+        "Dual-frequency sinusoidal synthesis (697-1633 Hz)",
+        "Motorola POCSAG 2400 Hz 4-burst acoustic pager synthesis",
+        "Tone frequency tolerance & noise rejection"
+      ]
+    },
+    {
+      "id": "geriatric-beers-auditor",
+      "role": "AGS Beers Criteria Clinical Auditor",
+      "systemPrompt": "You are a clinical pharmacologist specializing in geriatric patient safety. You ensure all drug interactions and dosing recommendations strictly satisfy the 2023 American Geriatrics Society (AGS) Beers Criteria, evaluating adherence and escalating via AI Health Guardians when necessary.",
+      "includeMcpJson": true,
+      "resources": [
+        "file://.kiro/steering/**/*.md",
+        "file://.kiro/specs/**/*.md"
+      ],
+      "tools": [
+        "clinicalAdvisor",
+        "negotiateAdherence",
+        "getTodaySchedule"
+      ],
+      "responsibilities": [
+        "Audit prescribed medications against Beers Criteria",
+        "Detect adverse drug-drug interactions (e.g., Warfarin + Aspirin)",
+        "Block autonomous refills when clinical contraindications are flagged"
+      ]
+    },
+    {
+      "id": "mcp-commerce-orchestrator",
+      "role": "Autonomous Healthcare Commerce Orchestrator",
+      "systemPrompt": "You are a healthcare financial logic orchestrator managing PayPal Vault billing, caregiver escrow invoicing, smart home delivery access, and SQLite ledger auditing under strict spending invariants.",
+      "includeMcpJson": true,
+      "resources": [
+        "file://.kiro/steering/**/*.md",
+        "file://.kiro/specs/**/*.md"
+      ],
+      "tools": [
+        "orderRefill",
+        "ringDeviceHub",
+        "logDoseStatus"
+      ],
+      "responsibilities": [
+        "Enforce strict $50.00 autonomous family wallet spending cap",
+        "Escalate over-limit transactions to caregiver escrow invoice",
+        "Maintain ACID-compliant SQLite WAL ledger of all payments"
+      ]
+    }
+  ]
+}
